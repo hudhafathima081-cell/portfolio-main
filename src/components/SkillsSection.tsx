@@ -47,7 +47,13 @@ const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: 
 );
 
 const SkillsSection = () => (
-  <section id="skills" className="py-24 bg-secondary/30">
+ <section
+  id="skills"
+  className="min-h-screen py-20 
+  bg-white/5 backdrop-blur-xl 
+  border-y border-white/10 
+  transition-all duration-700"
+>
     <div className="container mx-auto px-6">
       <SectionHeading title="Skills" subtitle="What I bring to the table" />
 
