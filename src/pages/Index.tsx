@@ -9,10 +9,9 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-screen p-4 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b]">
-
-    {/* 🔥 PREMIUM CONTAINER START */}
-    <div className="max-w-7xl mx-auto rounded-2xl border border-white/10 shadow-2xl bg-white/5 backdrop-blur-xl overflow-hidden">
+  <div className="min-h-screen bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] px-6 md:px-12 lg:px-20">
+    {/* ✅ THIS IS THE FIX */}
+    <div className="px-6 md:px-16 lg:px-24">
 
       <Navbar />
       <HeroSection />
@@ -25,7 +24,6 @@ const Index = () => (
       <Footer />
 
     </div>
-    {/* 🔥 PREMIUM CONTAINER END */}
 
   </div>
 );
