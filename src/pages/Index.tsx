@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import EducationSection from "@/components/EducationSection";
 import SkillsSection from "@/components/SkillsSection";
-import ProjectsSection from "@/components/ProjectsSection";
+import ProjectsSection from "@/components/ProjectsSection.tsx";
 import HobbiesSection from "@/components/HobbiesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
