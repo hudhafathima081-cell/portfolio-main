@@ -185,7 +185,12 @@ const ContactSection = () => {
                 onChange={(e) =>
                   setForm({ ...form, name: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+                
+  className="w-full px-4 py-3 rounded-xl 
+bg-white/5 backdrop-blur-md 
+border border-white/10 
+text-white placeholder:text-gray-400 
+focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
 
               <input
@@ -196,7 +201,11 @@ const ContactSection = () => {
                 onChange={(e) =>
                   setForm({ ...form, email: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+               className="w-full px-4 py-3 rounded-xl 
+bg-white/5 backdrop-blur-md 
+border border-white/10 
+text-white placeholder:text-gray-400 
+focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
 
               <textarea
@@ -207,10 +216,19 @@ const ContactSection = () => {
                 onChange={(e) =>
                   setForm({ ...form, message: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border resize-none"
+                className="w-full px-4 py-3 rounded-xl 
+bg-white/5 backdrop-blur-md 
+border border-white/10 
+text-white placeholder:text-gray-400 
+resize-none
+focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
 
-              <button className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-white">
+              <button className="w-full flex items-center justify-center gap-2 
+px-6 py-3 rounded-xl 
+bg-gradient-to-r from-yellow-400 to-yellow-500 
+text-black font-semibold 
+hover:scale-105 transition-all duration-300">
                 <Send size={16} /> Send Message
               </button>
             </form>
