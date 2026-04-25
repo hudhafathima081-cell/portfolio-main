@@ -9,7 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-screen bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] px-6 md:px-12 lg:px-20">
+  <div className="min-h-screen w-full overflow-x-hidden">
     {/* ✅ THIS IS THE FIX */}
     <div className="px-6 md:px-16 lg:px-24">
 

@@ -9,7 +9,7 @@ const AboutSection = () => (
   bg-white/5 backdrop-blur-xl 
   border-y border-white/10"
 >
-    <div className="container mx-auto px-6">
+    <div className="w-full px-6 md:px-12 lg:px-20">
       <SectionHeading title="About Me" subtitle="Get to know me better" />
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">

@@ -9,7 +9,7 @@ const ExperienceSection = () => (
   bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] 
   transition-all duration-700"
 >
-    <div className="container mx-auto px-6">
+    <div className="w-full px-6 md:px-12 lg:px-20">
       <SectionHeading title="Experience" subtitle="My professional journey" />
 
       <AnimatedSection className="max-w-2xl mx-auto">

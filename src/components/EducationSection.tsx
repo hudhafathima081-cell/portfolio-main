@@ -15,7 +15,7 @@ const EducationSection = () => (
   bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] 
   transition-all duration-700"
 >
-    <div className="container mx-auto px-6">
+    <div className="w-full px-6 md:px-12 lg:px-20">
       <SectionHeading title="Education" subtitle="My academic journey" />
 
       <div className="max-w-2xl mx-auto relative">

@@ -49,7 +49,11 @@
     --shadow-gold: 0 4px 20px -4px hsl(51 100% 50% / 0.3);
   }
 }
-
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 @layer base {
   * {
    * {

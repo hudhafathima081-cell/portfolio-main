@@ -24,8 +24,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-background/95 backdrop-blur-md shadow-card border-b border-border" : "bg-transparent"
       }`}
-    >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+    ><div className="w-full px-4 md:px-10 lg:px-16 py-4 flex items-center justify-between">
         <button onClick={() => scrollTo("home")} className="text-xl font-bold font-heading">
           <span className="text-gradient-gold">Huda</span>
           <span className="text-foreground"> Fathima</span>
