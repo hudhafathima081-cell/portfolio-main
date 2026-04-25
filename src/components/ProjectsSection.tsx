@@ -25,6 +25,7 @@ const ProjectsSection = () => {
             className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 block hover:scale-105 transition cursor-pointer"
           >
             <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+  {project.title}
 </h3>
             <p className="text-gray-300 mt-2">
               {project.description}
