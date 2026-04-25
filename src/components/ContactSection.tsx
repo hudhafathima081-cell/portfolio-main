@@ -34,7 +34,7 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    link: "https://instagram.com/",
+    link: "#",
     bg: "bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500",
   },
   {
