@@ -1,8 +1,8 @@
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "9633944714", href: "tel:9633944714" },
@@ -30,12 +30,12 @@ const ContactSection = () => {
 
     emailjs
       .send(
-        "service_portfolio",
-        "template_8g7i8yc",
+        "service_7j0m9cv",
+        "template_oeklz2k",
         
           {
-  from_name: form.name,
-  from_email: form.email,
+  name: form.name,
+  email: form.email,
   message: form.message,
 
         },
@@ -49,7 +49,7 @@ const ContactSection = () => {
       })
       .catch((error) => {
         console.error("EmailJS FULL ERROR:", error);
-        alert("Message sent successfully ✅");
+        alert("Failed to send message. Please try again later. ❌");
       });
   };
 
