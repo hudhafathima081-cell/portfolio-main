@@ -1,6 +1,6 @@
 const ParticlesBackground = () => {
   return (
-    <div className="fixed inset-0 z-50 pointer-events-none">
+    <div className="fixed inset-0 z-10 pointer-events-none">
 
       <span className="absolute w-6 h-6 bg-white rounded-full left-[10%] bottom-0 animate-bubble"></span>
       <span className="absolute w-4 h-4 bg-white rounded-full left-[30%] bottom-0 animate-bubble"></span>
