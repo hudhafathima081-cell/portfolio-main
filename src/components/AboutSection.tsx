@@ -3,7 +3,12 @@ import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 
 const AboutSection = () => (
-  <section id="about" className="py-24 bg-secondary/30">
+  <section
+  id="about"
+  className="min-h-screen py-20 
+  bg-white/5 backdrop-blur-xl 
+  border-y border-white/10"
+>
     <div className="container mx-auto px-6">
       <SectionHeading title="About Me" subtitle="Get to know me better" />
 
