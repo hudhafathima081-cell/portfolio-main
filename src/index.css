@@ -103,3 +103,16 @@
 .animate-bubble {
   animation: bubble 10s linear infinite;
 }
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
