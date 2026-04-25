@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 const Index = () => (
   <div className="min-h-screen w-full overflow-x-hidden">
     {/* ✅ THIS IS THE FIX */}
-    <div className="px-6 md:px-16 lg:px-24">
+    <div className="w-full">
 
       <Navbar />
       <HeroSection />

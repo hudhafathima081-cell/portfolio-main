@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   return (
     
-     <section id="home" className="min-h-screen flex items-center bg-[#020617] px-4 md:px-10 lg:px-16">
+     <section id="home" className="min-h-screen flex items-center bg-[#020617] overflow-hidden relative">
     
       {/* 🔵 Background Glow */}
       <div className="absolute inset-0">
@@ -39,7 +39,7 @@ const HeroSection = () => {
       </div>
 
       {/* ❗ MAIN FIX IS HERE */}
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+      <div className="w-full max-w-7xl mx-auto px-6">
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
