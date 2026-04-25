@@ -28,32 +28,32 @@ const socialLinks = [
   {
     name: "WhatsApp",
     icon: "whatsapp",
-    link: "https://wa.me/919633944714",
-    color: "bg-green-500",
+    link: "https://wa.me/916235504714",
+    bg: "bg-green-500",
   },
   {
     name: "Instagram",
     icon: Instagram,
     link: "https://instagram.com/",
-    color: "bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500",
+    bg: "bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500",
   },
   {
     name: "Facebook",
     icon: Facebook,
     link: "https://facebook.com/",
-    color: "bg-blue-600",
+    bg: "bg-blue-600",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
     link: "https://www.linkedin.com/in/hudha-fathima-a31a25405/",
-    color: "bg-blue-500",
+    bg: "bg-blue-500",
   },
   {
     name: "GitHub",
     icon: Github,
-    link: "https://github.com/your_username",
-    color: "bg-gray-800",
+    link: "https://github.com/hudhafathima081-cell",
+    bg: "bg-black",
   },
 ];
 
@@ -129,12 +129,12 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* 🔥 SOCIAL ICONS WITH POPUP */}
+            {/* 🔥 SOCIAL ICONS */}
             <div className="flex gap-5 pt-6 justify-center">
               {socialLinks.map((social, index) => (
                 <div key={index} className="relative group">
 
-                  {/* POPUP */}
+                  {/* Tooltip */}
                   <span className="absolute -top-9 left-1/2 -translate-x-1/2 
                   bg-black text-white text-xs px-3 py-1 rounded-md 
                   opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 
@@ -142,27 +142,27 @@ const ContactSection = () => {
                     {social.name}
                   </span>
 
-                  {/* ICON */}
+                  {/* Icon Box */}
                   <a
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 flex items-center justify-center rounded-xl text-white shadow-lg 
-                    transform transition-all duration-300 
-                    hover:scale-110 hover:-translate-y-1 ${social.color}`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl 
+                    text-white shadow-lg transition-all duration-300 
+                    hover:scale-110 hover:-translate-y-1 ${social.bg}`}
                   >
                     {social.icon === "whatsapp" ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        fill="currentColor"
+                        width="24"
+                        height="24"
+                        fill="white"
                         viewBox="0 0 24 24"
                       >
                         <path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.37 0 .02 5.36.02 12c0 2.11.55 4.16 1.6 5.97L0 24l6.23-1.63A11.94 11.94 0 0012 24c6.64 0 12-5.36 12-12 0-3.2-1.25-6.21-3.48-8.52z"/>
                       </svg>
                     ) : (
-                      <social.icon size={20} />
+                      <social.icon size={24} />
                     )}
                   </a>
                 </div>
