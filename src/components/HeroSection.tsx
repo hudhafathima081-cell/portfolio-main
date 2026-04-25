@@ -19,10 +19,10 @@ const HeroSection = () => {
 
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
-      style={{ background: "var(--gradient-hero)" }}
-    >
+  id="home"
+  className="min-h-screen flex items-center relative 
+  bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#020617]"
+>
       {/* 🔵 Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
