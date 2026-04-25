@@ -9,7 +9,12 @@ const education = [
 ];
 
 const EducationSection = () => (
-  <section id="education" className="py-24">
+  <section
+  id="education"
+  className="min-h-screen py-20 
+  bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] 
+  transition-all duration-700"
+>
     <div className="container mx-auto px-6">
       <SectionHeading title="Education" subtitle="My academic journey" />
 
