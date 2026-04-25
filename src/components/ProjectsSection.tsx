@@ -1,27 +1,13 @@
 import { useState } from "react";
 
 const ProjectsSection = () => {
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       title: "Portfolio Website",
       description: "Personal portfolio built with React",
+      link: "https://portfolio-main-beta-ivory.vercel.app/",
     },
   ]);
-
-  const [form, setForm] = useState({
-    title: "",
-    description: "",
-  });
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    if (!form.title || !form.description) return;
-
-    setProjects([...projects, form]);
-
-    setForm({ title: "", description: "" });
-  };
 
   return (
     <section id="projects" className="py-20 px-5 text-white">
@@ -29,19 +15,22 @@ const ProjectsSection = () => {
         Projects
       </h2>
 
-      {/* Project List */}
-      <div className="grid md:grid-cols-2 gap-6 mb-10">
+      <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <div
+          <a
             key={index}
-            className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 block hover:scale-105 transition cursor-pointer"
           >
             <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-gray-300 mt-2">{project.description}</p>
-          </div>
+            <p className="text-gray-300 mt-2">
+              {project.description}
+            </p>
+          </a>
         ))}
       </div>
-      
     </section>
   );
 };
