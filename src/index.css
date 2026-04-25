@@ -86,3 +86,20 @@
     box-shadow: 0 0 20px hsl(51 100% 50% / 0.15), 0 0 60px hsl(51 100% 50% / 0.05);
   }
 }
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-bubble {
+  animation: bubble 10s linear infinite;
+}
