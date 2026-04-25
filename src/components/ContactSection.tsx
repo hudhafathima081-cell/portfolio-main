@@ -1,13 +1,60 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "9633944714", href: "tel:9633944714" },
-  { icon: Mail, label: "Email", value: "hudhafathima081@gmail.com", href: "mailto:hudhafathima081@gmail.com" },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "hudhafathima081@gmail.com",
+    href: "mailto:hudhafathima081@gmail.com",
+  },
   { icon: MapPin, label: "Address", value: "Kasaragod, Kerala" },
+];
+
+const socialLinks = [
+  {
+    name: "WhatsApp",
+    icon: "whatsapp",
+    link: "https://wa.me/919633944714",
+    color: "bg-green-500",
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    link: "https://instagram.com/",
+    color: "bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500",
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    link: "https://facebook.com/",
+    color: "bg-blue-600",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    link: "https://www.linkedin.com/in/hudha-fathima-a31a25405/",
+    color: "bg-blue-500",
+  },
+  {
+    name: "GitHub",
+    icon: Github,
+    link: "https://github.com/your_username",
+    color: "bg-gray-800",
+  },
 ];
 
 const ContactSection = () => {
@@ -20,9 +67,6 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log("FORM DATA:", form);
-
-    // ✅ Safety check (prevents 412 error)
     if (!form.name || !form.email || !form.message) {
       alert("Please fill all fields ⚠️");
       return;
@@ -32,15 +76,13 @@ const ContactSection = () => {
       .send(
         "service_7j0m9cv",
         "template_oeklz2k",
-        
-          {
-  name: form.name,
-  email: form.email,
-  message: form.message,
-
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
         },
         {
-          publicKey:"z-hNHY449NjcPojjJ",
+          publicKey: "z-hNHY449NjcPojjJ",
         }
       )
       .then(() => {
@@ -48,8 +90,8 @@ const ContactSection = () => {
         setForm({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        console.error("EmailJS FULL ERROR:", error);
-        alert("Failed to send message. Please try again later. ❌");
+        console.error(error);
+        alert("Failed to send message ❌");
       });
   };
 
@@ -68,29 +110,65 @@ const ContactSection = () => {
                   key={info.label}
                   className="flex items-center gap-4 bg-gradient-card rounded-xl p-5 shadow-card border border-border/50"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
                     <info.icon className="text-primary" size={20} />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    <p className="text-xs text-muted-foreground uppercase">
                       {info.label}
                     </p>
                     {info.href ? (
-                      <a
-                        href={info.href}
-                        className="text-foreground font-medium hover:text-primary transition-colors text-sm"
-                      >
+                      <a href={info.href} className="text-sm hover:text-primary">
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-foreground font-medium text-sm">
-                        {info.value}
-                      </p>
+                      <p className="text-sm">{info.value}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* 🔥 SOCIAL ICONS WITH POPUP */}
+            <div className="flex gap-5 pt-6 justify-center">
+              {socialLinks.map((social, index) => (
+                <div key={index} className="relative group">
+
+                  {/* POPUP */}
+                  <span className="absolute -top-9 left-1/2 -translate-x-1/2 
+                  bg-black text-white text-xs px-3 py-1 rounded-md 
+                  opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 
+                  transition-all duration-300 whitespace-nowrap">
+                    {social.name}
+                  </span>
+
+                  {/* ICON */}
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-12 h-12 flex items-center justify-center rounded-xl text-white shadow-lg 
+                    transform transition-all duration-300 
+                    hover:scale-110 hover:-translate-y-1 ${social.color}`}
+                  >
+                    {social.icon === "whatsapp" ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.37 0 .02 5.36.02 12c0 2.11.55 4.16 1.6 5.97L0 24l6.23-1.63A11.94 11.94 0 0012 24c6.64 0 12-5.36 12-12 0-3.2-1.25-6.21-3.48-8.52z"/>
+                      </svg>
+                    ) : (
+                      <social.icon size={20} />
+                    )}
+                  </a>
+                </div>
+              ))}
+            </div>
+
           </AnimatedSection>
 
           {/* RIGHT SIDE FORM */}
@@ -99,68 +177,45 @@ const ContactSection = () => {
               onSubmit={handleSubmit}
               className="bg-gradient-card rounded-xl p-8 shadow-card border border-border/50 space-y-5"
             >
+              <input
+                required
+                type="text"
+                placeholder="Your name"
+                value={form.name}
+                onChange={(e) =>
+                  setForm({ ...form, name: e.target.value })
+                }
+                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+              />
 
-              {/* NAME */}
-              <div>
-                <label className="text-xs text-muted-foreground uppercase tracking-wider mb-1.5 block">
-                  Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  value={form.name}
-                  onChange={(e) =>
-                    setForm({ ...form, name: e.target.value })
-                  }
-                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground text-sm"
-                  placeholder="Your name"
-                />
-              </div>
+              <input
+                required
+                type="email"
+                placeholder="Your email"
+                value={form.email}
+                onChange={(e) =>
+                  setForm({ ...form, email: e.target.value })
+                }
+                className="w-full px-4 py-3 rounded-lg bg-muted border border-border"
+              />
 
-              {/* EMAIL */}
-              <div>
-                <label className="text-xs text-muted-foreground uppercase tracking-wider mb-1.5 block">
-                  Email
-                </label>
-                <input
-                  required
-                  type="email"
-                  value={form.email}
-                  onChange={(e) =>
-                    setForm({ ...form, email: e.target.value })
-                  }
-                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground text-sm"
-                  placeholder="your@email.com"
-                />
-              </div>
+              <textarea
+                required
+                rows={4}
+                placeholder="Your message..."
+                value={form.message}
+                onChange={(e) =>
+                  setForm({ ...form, message: e.target.value })
+                }
+                className="w-full px-4 py-3 rounded-lg bg-muted border border-border resize-none"
+              />
 
-              {/* MESSAGE */}
-              <div>
-                <label className="text-xs text-muted-foreground uppercase tracking-wider mb-1.5 block">
-                  Message
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  value={form.message}
-                  onChange={(e) =>
-                    setForm({ ...form, message: e.target.value })
-                  }
-                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground text-sm resize-none"
-                  placeholder="Your message..."
-                />
-              </div>
-
-              {/* BUTTON */}
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:scale-[1.02]"
-              >
+              <button className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-white">
                 <Send size={16} /> Send Message
               </button>
-
             </form>
           </AnimatedSection>
+
         </div>
       </div>
     </section>
