@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // ✅ Auto switch base for dev & GitHub Pages
-  base: mode === "production" ? "/portfolio-main/" : "/",
+  base: "/",
 
   server: {
     host: true,
