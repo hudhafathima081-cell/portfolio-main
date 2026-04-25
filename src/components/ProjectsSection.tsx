@@ -41,42 +41,7 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
-
-      {/* Add Project Form */}
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-md mx-auto bg-white/10 p-6 rounded-xl backdrop-blur-lg"
-      >
-        <h3 className="text-xl mb-4 font-semibold text-center">
-          Add Project
-        </h3>
-
-        <input
-          type="text"
-          placeholder="Project Title"
-          value={form.title}
-          onChange={(e) =>
-            setForm({ ...form, title: e.target.value })
-          }
-          className="w-full mb-3 p-2 rounded bg-black/50 border border-gray-500"
-        />
-
-        <textarea
-          placeholder="Project Description"
-          value={form.description}
-          onChange={(e) =>
-            setForm({ ...form, description: e.target.value })
-          }
-          className="w-full mb-3 p-2 rounded bg-black/50 border border-gray-500"
-        />
-
-        <button
-          type="submit"
-          className="w-full bg-yellow-400 text-black py-2 rounded font-semibold"
-        >
-          Submit Project
-        </button>
-      </form>
+      
     </section>
   );
 };
