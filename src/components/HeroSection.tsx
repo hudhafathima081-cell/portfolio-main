@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useState, MouseEvent } from "react";
 import heroImg from "../assets/huda8.png";
 
+// 👉 If resume is inside src/assets use this:
+// import resume from "../assets/Huda_Resume.pdf";
+
 const HeroSection = () => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -17,12 +20,14 @@ const HeroSection = () => {
     setRotate({ x: 0, y: 0 });
   };
 
-  // ✅ FIXED CONTACT SCROLL (WITH NAVBAR OFFSET)
+  // ✅ CLEAN CONTACT SCROLL
   const handleContactClick = () => {
     const section = document.getElementById("contact");
     if (section) {
-      const y = section.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
@@ -31,8 +36,8 @@ const HeroSection = () => {
       id="home"
       className="min-h-screen flex items-center bg-[#020617] overflow-hidden relative"
     >
-      {/* 🔵 Background Glow */}
-      <div className="absolute inset-0">
+      {/* 🔵 Background Glow (FIXED CLICK ISSUE) */}
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
         <div className="absolute bottom-20 right-20 w-72 h-72 bg-yellow-400/20 blur-3xl rounded-full"></div>
       </div>
@@ -49,9 +54,9 @@ const HeroSection = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          
+
           {/* LEFT */}
           <div>
             <p className="text-primary font-medium mb-3">
@@ -75,19 +80,18 @@ const HeroSection = () => {
 
             {/* BUTTONS */}
             <div className="flex gap-4 mt-6 flex-wrap">
-              
-              {/* ✅ DOWNLOAD FIXED */}
+
+              {/* ✅ DOWNLOAD BUTTON */}
               <a
-                href="/resume/Huda_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/resume/Huda_Resume.pdf" // 👉 put file in public/resume
+                download
                 className="flex items-center gap-2 bg-yellow-400 text-black px-5 py-3 rounded-lg font-medium hover:scale-105 transition"
               >
                 <Download size={18} />
                 Download Resume
               </a>
 
-              {/* ✅ CONTACT FIXED */}
+              {/* ✅ CONTACT BUTTON */}
               <button
                 onClick={handleContactClick}
                 className="flex items-center gap-2 border border-yellow-400 text-yellow-400 px-5 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition"
