@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 
 const education = [
-  { period: "2024 – Present", school: "Sa-Adiya Arts and Science College", detail: "BCA (AI)", current: true },
+  { period: "2024 – Present", school: "Sa-Adiya Arts and Science College", detail: "BCA", current: true },
   { period: "2022 – 2024", school: "MP International School", detail: "Computer Science" },
   { period: "2010 – 2022", school: "Kunil Educational Institution", detail: "Schooling" },
 ];
