@@ -1,12 +1,12 @@
 import { Download, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import heroImg from "../assets/huda8.png";
 
 const HeroSection = () => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientY - rect.top - rect.height / 2) / 25;
     const y = (e.clientX - rect.left - rect.width / 2) / 25;
@@ -17,10 +17,20 @@ const HeroSection = () => {
     setRotate({ x: 0, y: 0 });
   };
 
+  // ✅ FIXED CONTACT SCROLL (WITH NAVBAR OFFSET)
+  const handleContactClick = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
-    
-     <section id="home" className="min-h-screen flex items-center bg-[#020617] overflow-hidden relative">
-    
+    <section
+      id="home"
+      className="min-h-screen flex items-center bg-[#020617] overflow-hidden relative"
+    >
       {/* 🔵 Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
@@ -38,12 +48,11 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* ❗ MAIN FIX IS HERE */}
+      {/* MAIN CONTENT */}
       <div className="w-full max-w-7xl mx-auto px-6">
-
         <div className="grid md:grid-cols-2 gap-10 items-center">
-
-          {/* LEFT CONTENT */}
+          
+          {/* LEFT */}
           <div>
             <p className="text-primary font-medium mb-3">
               Hello, I'm
@@ -64,38 +73,46 @@ const HeroSection = () => {
               software development.
             </p>
 
+            {/* BUTTONS */}
             <div className="flex gap-4 mt-6 flex-wrap">
+              
+              {/* ✅ DOWNLOAD FIXED */}
               <a
                 href="/resume/Huda_Resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-yellow-400 text-black px-5 py-3 rounded-lg font-medium hover:scale-105 transition"
               >
                 <Download size={18} />
                 Download Resume
               </a>
 
-              <a
-                href="#contact"
+              {/* ✅ CONTACT FIXED */}
+              <button
+                onClick={handleContactClick}
                 className="flex items-center gap-2 border border-yellow-400 text-yellow-400 px-5 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition"
               >
                 <Mail size={18} />
                 Contact Me
-              </a>
+              </button>
+
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
           <div
             className="flex justify-center relative"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
+            {/* Glow */}
             <motion.div
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 5, repeat: Infinity }}
               className="absolute w-[300px] h-[300px] bg-yellow-400/30 blur-[120px] rounded-full"
             />
 
+            {/* Image */}
             <motion.img
               src={heroImg}
               alt="Huda"
