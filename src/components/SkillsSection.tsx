@@ -18,10 +18,10 @@ const skillGroups = [
     icon: Code,
     skills: [
       { name: "C Programming", level: 75 },
-      { name: "C++", level: 70 },
-      { name: "Java", level: 65 },
+      { name: "C++", level: 75 },
+      { name: "Java", level: 70 },
       { name: "MS Office", level: 85 },
-      { name: "HTML", level: 60 },
+      { name: "HTML", level: 80 },
       { name: "Google Meet / Zoom", level: 90 },
     ],
   },
