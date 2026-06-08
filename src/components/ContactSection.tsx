@@ -46,7 +46,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    link: "https://www.linkedin.com/in/hudha-fathima-a31a25405/",
+    link: "https://www.linkedin.com/in/hudha-fathima-a31a25405",
     bg: "bg-blue-500",
   },
   {
