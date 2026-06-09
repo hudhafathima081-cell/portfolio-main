@@ -4,123 +4,184 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ROOT VARIABLES */
 @layer base {
+
   :root {
+
     --background: 216 50% 11%;
     --foreground: 213 100% 93%;
+
     --card: 217 47% 16%;
     --card-foreground: 213 100% 93%;
+
     --popover: 217 47% 16%;
     --popover-foreground: 213 100% 93%;
+
     --primary: 51 100% 50%;
     --primary-foreground: 216 50% 11%;
+
     --secondary: 217 47% 16%;
     --secondary-foreground: 213 100% 93%;
+
     --muted: 217 30% 22%;
     --muted-foreground: 213 40% 65%;
+
     --accent: 51 100% 50%;
     --accent-foreground: 216 50% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+
     --border: 217 30% 25%;
-    --input: 217 30% 25%;
-    --ring: 51 100% 50%;
+
     --radius: 0.75rem;
 
-    --sidebar-background: 217 47% 16%;
-    --sidebar-foreground: 213 100% 93%;
-    --sidebar-primary: 51 100% 50%;
-    --sidebar-primary-foreground: 216 50% 11%;
-    --sidebar-accent: 217 30% 22%;
-    --sidebar-accent-foreground: 213 100% 93%;
-    --sidebar-border: 217 30% 25%;
-    --sidebar-ring: 51 100% 50%;
+    --gradient-hero:
+      linear-gradient(
+        135deg,
+        hsl(216 69% 11%) 0%,
+        hsl(217 47% 16%) 50%,
+        hsl(220 50% 14%) 100%
+      );
 
-    --navy-deep: 216 69% 11%;
-    --navy-light: 217 47% 16%;
-    --gold: 51 100% 50%;
-    --gold-dim: 51 80% 40%;
-    --text-bright: 213 100% 93%;
-    --text-muted: 213 40% 65%;
-    --gradient-hero: linear-gradient(135deg, hsl(216 69% 11%) 0%, hsl(217 47% 16%) 50%, hsl(220 50% 14%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(217 47% 18%) 0%, hsl(217 47% 14%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(40 100% 55%) 100%);
-    --shadow-card: 0 8px 32px -8px hsl(216 69% 5% / 0.5);
-    --shadow-gold: 0 4px 20px -4px hsl(51 100% 50% / 0.3);
+    --gradient-card:
+      linear-gradient(
+        145deg,
+        hsl(217 47% 18%) 0%,
+        hsl(217 47% 14%) 100%
+      );
+
+    --gradient-gold:
+      linear-gradient(
+        135deg,
+        hsl(51 100% 50%) 0%,
+        hsl(40 100% 55%) 100%
+      );
+
+    --shadow-card:
+      0 8px 32px -8px
+      hsl(216 69% 5% / 0.4);
+
+    --shadow-gold:
+      0 4px 20px -4px
+      hsl(51 100% 50% / 0.25);
+
   }
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-@layer base {
-  *{
-   *{
-  border-color: hsl(var(--border));
-}
+
+  /* GLOBAL RESET */
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
- body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-family: 'Poppins', 'Inter', sans-serif;
-}
+
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+
+    font-family:
+      'Poppins',
+      'Inter',
+      sans-serif;
+  }
+
 }
 
+/* UTILITIES */
 @layer utilities {
+
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(51 100% 50%), hsl(40 100% 55%));
+    background:
+      linear-gradient(
+        135deg,
+        hsl(51 100% 50%),
+        hsl(40 100% 55%)
+      );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
+
   .bg-gradient-card {
     background: var(--gradient-card);
   }
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
+
   .shadow-gold {
     box-shadow: var(--shadow-gold);
   }
+
   .glow-gold {
-    box-shadow: 0 0 20px hsl(51 100% 50% / 0.15), 0 0 60px hsl(51 100% 50% / 0.05);
+    box-shadow:
+      0 0 20px hsl(51 100% 50% / 0.1),
+      0 0 50px hsl(51 100% 50% / 0.04);
   }
+
 }
+
+/* PREMIUM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(
+      to bottom,
+      #facc15,
+      #eab308
+    );
+
+  border-radius: 999px;
+}
+
+/* FLOATING BUBBLES */
 @keyframes bubble {
+
   0% {
-    transform: translateY(0) scale(1);
+    transform:
+      translateY(0)
+      scale(1);
+
     opacity: 0;
   }
+
   20% {
-    opacity: 0.6;
+    opacity: 0.5;
   }
+
   100% {
-    transform: translateY(-120vh) scale(1.2);
+    transform:
+      translateY(-120vh)
+      scale(1.1);
+
     opacity: 0;
   }
+
 }
 
 .animate-bubble {
   animation: bubble linear infinite;
-}
-@keyframes bubble {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
 }

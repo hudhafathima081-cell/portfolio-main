@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 
-// LENIS SMOOTH SCROLL
+// SMOOTH SCROLL
 const lenis = new Lenis({
-  duration: 1.5,
+  duration: 1.2,
   smoothWheel: true,
+  wheelMultiplier: 0.8,
+  touchMultiplier: 1.5,
 });
 
 // ANIMATION FRAME
