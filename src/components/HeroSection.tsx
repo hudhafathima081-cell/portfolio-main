@@ -64,7 +64,7 @@ const HeroSection = () => {
             </p>
 
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-white">Huda</span>{" "}
+              <span className="text-white">Hudha</span>{" "}
               <span className="text-yellow-400">Fathima</span>
             </h1>
 
