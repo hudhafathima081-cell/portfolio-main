@@ -1,39 +1,83 @@
+import { useState } from "react";
+
 const Certificates = () => {
+  const [showCertificate, setShowCertificate] = useState(false);
+
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-10">
+    <section
+      id="certificates"
+      className="py-20 bg-[#020617] text-white"
+    >
+      <div className="max-w-5xl mx-auto px-6">
 
-      <h1 className="text-4xl font-bold text-center mb-10">
-        My <span className="text-yellow-400">Certificates</span>
-      </h1>
-
-      {/* CARD */}
-      <div className="bg-white/10 p-5 rounded-xl max-w-md mx-auto">
-
-        <img
-          src="/certificate.png"
-          alt="certificate"
-          className="rounded-lg"
-        />
-
-        <h2 className="text-2xl mt-4">
-          Web Development Internship
+        {/* HEADING */}
+        <h2 className="text-4xl font-bold text-center mb-12">
+          My <span className="text-yellow-400">Certificates</span>
         </h2>
 
-        <p className="text-gray-400 mt-2">
-          XYZ Company • 2026
-        </p>
-
-        <a
-          href="/certificate.pdf"
-          target="_blank"
-          className="inline-block mt-4 bg-yellow-400 text-black px-4 py-2 rounded-lg"
+        {/* YELLOW BOX */}
+        <div
+          className="
+            bg-yellow-400
+            text-black
+            rounded-2xl
+            p-6
+            max-w-xl
+            mx-auto
+            shadow-lg
+          "
         >
-          View Certificate
-        </a>
+
+          <h3 className="text-2xl font-bold">
+            Web Development Internship
+          </h3>
+
+          <p className="mt-2">
+            Zephyr Company • 2026
+          </p>
+
+          {/* BUTTON */}
+          <button
+            onClick={() =>
+              setShowCertificate(!showCertificate)
+            }
+            className="
+              mt-5
+              bg-black
+              text-white
+              px-5
+              py-2
+              rounded-lg
+              hover:scale-105
+              transition
+            "
+          >
+            View Certificate
+          </button>
+
+        </div>
+
+        {/* CERTIFICATE IMAGE */}
+        {showCertificate && (
+          <div className="mt-10 max-w-3xl mx-auto">
+
+            <img
+              src="/certificate.jpg"
+              alt="Certificate"
+              className="
+                rounded-2xl
+                shadow-2xl
+                w-full
+                border
+                border-white/10
+              "
+            />
+
+          </div>
+        )}
 
       </div>
-
-    </div>
+    </section>
   );
 };
 
