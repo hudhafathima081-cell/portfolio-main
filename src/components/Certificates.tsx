@@ -1,4 +1,4 @@
-import SpotlightCard from "@/components/SpotlightCard";
+
 import MagneticButton from "@/components/MagneticButton";
 
 const Certificates = () => {
@@ -58,7 +58,7 @@ const Certificates = () => {
         </h2>
 
         {/* CARD */}
-        <SpotlightCard>
+        
 
           <div
             className="
@@ -72,7 +72,7 @@ const Certificates = () => {
 
               p-8
 
-              max-w-2xl
+              max-w-md
               mx-auto
 
               shadow-2xl
@@ -111,18 +111,7 @@ const Certificates = () => {
             </p>
 
             {/* DESCRIPTION */}
-            <p
-              className="
-                mt-5
-                leading-relaxed
-                text-black/80
-              "
-            >
-              Completed internship training in
-              frontend web development using
-              React, Tailwind CSS, and modern
-              UI/UX principles.
-            </p>
+            
 
             {/* BUTTON */}
             <div className="mt-8">
@@ -164,7 +153,7 @@ const Certificates = () => {
 
           </div>
 
-        </SpotlightCard>
+        
 
       </div>
 
