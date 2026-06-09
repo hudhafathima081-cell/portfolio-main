@@ -111,7 +111,7 @@ const Certificates = () => {
             <MagneticButton>
 
               <a
-                href="/certificate.png"
+                href="certificates/HudhaFathima.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="
