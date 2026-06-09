@@ -80,29 +80,37 @@ const Loader = () => {
 
   {/* COLOR FILL */}
   <motion.div
-    initial={{ height: 0 }}
-    animate={{ height: `${progress}%` }}
-    transition={{ ease: "linear" }}
+  initial={{
+    clipPath: "inset(100% 0% 0% 0%)",
+    filter: "brightness(1.2) blur(8px)",
+    opacity: 0.3,
+  }}
+  animate={{
+    clipPath: `inset(${100 - progress}% 0% 0% 0%)`,
+    filter: "brightness(1) blur(0px)",
+    opacity: 1,
+  }}
+  transition={{
+    ease: "easeOut",
+    duration: 0.3,
+  }}
+  className="
+    absolute
+    inset-0
+  "
+>
+
+  <img
+    src={heroImg}
+    alt="loading"
     className="
-      absolute
-      bottom-0
-      left-0
       w-full
-      overflow-hidden
+      h-full
+      object-contain
     "
-  >
+  />
 
-    <img
-      src={heroImg}
-      alt="loading"
-      className="
-        w-full
-        h-full
-        object-contain
-      "
-    />
-
-  </motion.div>
+</motion.div>
 
 </div>
       {/* PERCENTAGE */}
