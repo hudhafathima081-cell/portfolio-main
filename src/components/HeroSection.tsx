@@ -1,3 +1,4 @@
+import { TypeAnimation } from "react-type-animation";
 import { Download, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, MouseEvent } from "react";
