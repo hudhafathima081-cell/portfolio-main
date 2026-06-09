@@ -1,4 +1,3 @@
-
 import MagneticButton from "@/components/MagneticButton";
 
 const Certificates = () => {
@@ -9,156 +8,150 @@ const Certificates = () => {
       id="certificates"
       className="
         py-24
-        bg-[#020617]
         text-white
         relative
         overflow-hidden
       "
     >
 
-      {/* BACKGROUND GLOW */}
       <div
         className="
-          absolute
-          top-1/2
-          left-1/2
-          -translate-x-1/2
-          -translate-y-1/2
-          w-[500px]
-          h-[500px]
-          bg-yellow-400/10
-          blur-[140px]
-          rounded-full
+          max-w-5xl
+          mx-auto
+          px-6
+          relative
+          z-10
         "
-      />
-
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      >
 
         {/* HEADING */}
         <h2
           className="
             text-4xl
             md:text-5xl
+
             font-bold
+
             text-center
+
             mb-16
-            text-white
           "
         >
+
           My{" "}
 
           <span
             className="
               text-yellow-400
-              drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]
+
+              drop-shadow-[0_0_15px_rgba(255,215,0,0.25)]
             "
           >
             Certificates
           </span>
+
         </h2>
 
         {/* CARD */}
-        
+        <div
+          className="
+            bg-[#0f172a]/40
 
-          <div
+            rounded-3xl
+
+            p-8
+
+            max-w-md
+            mx-auto
+
+            border
+            border-yellow-400/20
+
+            shadow-lg
+
+            transition-all
+            duration-300
+
+            hover:border-yellow-400/40
+
+            hover:shadow-[0_0_30px_rgba(255,215,0,0.12)]
+
+            hover:-translate-y-1
+          "
+        >
+
+          {/* TITLE */}
+          <h3
             className="
-              bg-gradient-to-br
-              from-yellow-400
-              to-yellow-300
+              text-2xl
+              font-bold
 
-              text-black
-
-              rounded-3xl
-
-              p-8
-
-              max-w-md
-              mx-auto
-
-              shadow-2xl
-
-              border
-              border-yellow-200/40
-
-              backdrop-blur-xl
-
-              transition-all
-              duration-500
-
-              hover:scale-[1.02]
+              text-white
             "
           >
+            Web Development Internship
+          </h3>
 
-            {/* TITLE */}
-            <h3
-              className="
-                text-3xl
-                font-bold
-              "
-            >
-              Web Development Internship
-            </h3>
+          {/* COMPANY */}
+          <p
+            className="
+              mt-3
 
-            {/* COMPANY */}
-            <p
-              className="
-                mt-3
-                text-black/70
-                text-lg
-              "
-            >
-              Zephyr Company • 2026
-            </p>
+              text-gray-400
 
-            {/* DESCRIPTION */}
-            
+              text-sm
+            "
+          >
+            Zephyr Company • 2026
+          </p>
 
-            {/* BUTTON */}
-            <div className="mt-8">
+          {/* BUTTON */}
+          <div className="mt-8">
 
-              <MagneticButton>
+            <MagneticButton>
 
-                <a
-                  href="/certificate.png"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
+              <a
+                href="/certificate.png"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
 
-                    bg-black
-                    text-white
+                  bg-yellow-400
+                  text-black
 
-                    px-6
-                    py-3
+                  px-6
+                  py-3
 
-                    rounded-xl
+                  rounded-xl
 
-                    font-medium
+                  font-medium
 
-                    transition-all
-                    duration-300
+                  transition-all
+                  duration-300
 
-                    hover:bg-[#111827]
-                    hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]
-                  "
-                >
-                  View Certificate
-                </a>
+                  hover:scale-105
 
-              </MagneticButton>
+                  hover:shadow-[0_0_20px_rgba(255,215,0,0.25)]
+                "
+              >
+                View Certificate
+              </a>
 
-            </div>
+            </MagneticButton>
 
           </div>
 
-        
+        </div>
 
       </div>
 
     </section>
+
   );
+
 };
 
 export default Certificates;

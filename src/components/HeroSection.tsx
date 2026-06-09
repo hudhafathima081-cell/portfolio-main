@@ -68,7 +68,6 @@ const HeroSection = () => {
         min-h-screen
         flex
         items-center
-        bg-gradient-hero
         overflow-hidden
         relative
       "

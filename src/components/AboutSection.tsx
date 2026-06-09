@@ -5,16 +5,14 @@ import SectionHeading from "./SectionHeading";
 const AboutSection = () => (
   <section
   id="about"
-  className="min-h-screen py-20 
-  bg-white/5 backdrop-blur-xl 
-  border-y border-white/10"
+  className="min-h-screen py-20"
 >
     <div className="w-full px-6 md:px-12 lg:px-20">
       <SectionHeading title="About Me" subtitle="Get to know me better" />
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
         <AnimatedSection className="md:col-span-2" delay={0.1}>
-          <div className="card-glass p-6 rounded-2xl backdrop-blur-lg bg-white/5 border border-yellow-400/30 
+          <div className="card-glass p-6 rounded-2xl bg-[#0f172a]/40 border border-yellow-400/30 
 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 
 hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:border-yellow-400">
             <div className="flex items-center gap-3 mb-4">
@@ -32,7 +30,7 @@ hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:border-yellow-400">
 
         <div className="flex flex-col gap-4">
           <AnimatedSection delay={0.2}>
-            <div className="card-glass p-6 rounded-2xl backdrop-blur-lg bg-white/5 border border-yellow-400/30 
+            <div className="card-glass p-6 rounded-2xl bg-[#0f172a]/40 border border-yellow-400/30 
 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 
 hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:border-yellow-400">
               <div className="flex items-center gap-3 mb-3">
@@ -44,7 +42,7 @@ hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:border-yellow-400">
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-           <div className="card-glass p-6 rounded-2xl backdrop-blur-lg bg-white/5 border border-yellow-400/30 
+           <div className="card-glass p-6 rounded-2xl bg-[#0f172a]/40 border border-yellow-400/30 
 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 
 hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:border-yellow-400">
               <div className="flex items-center gap-3 mb-3">
