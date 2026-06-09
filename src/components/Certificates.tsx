@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 const Certificates = () => {
-  const [showCertificate, setShowCertificate] = useState(false);
-
   return (
     <section
       id="certificates"
@@ -15,7 +11,7 @@ const Certificates = () => {
           My <span className="text-yellow-400">Certificates</span>
         </h2>
 
-        {/* YELLOW BOX */}
+        {/* CERTIFICATE CARD */}
         <div
           className="
             bg-yellow-400
@@ -37,11 +33,12 @@ const Certificates = () => {
           </p>
 
           {/* BUTTON */}
-          <button
-            onClick={() =>
-              setShowCertificate(!showCertificate)
-            }
+          <a
+            href="/certificate.png"
+            target="_blank"
+            rel="noreferrer"
             className="
+              inline-block
               mt-5
               bg-black
               text-white
@@ -53,28 +50,9 @@ const Certificates = () => {
             "
           >
             View Certificate
-          </button>
+          </a>
 
         </div>
-
-        {/* CERTIFICATE IMAGE */}
-        {showCertificate && (
-          <div className="mt-10 max-w-3xl mx-auto">
-
-            <img
-              src="/certificate.jpg"
-              alt="Certificate"
-              className="
-                rounded-2xl
-                shadow-2xl
-                w-full
-                border
-                border-white/10
-              "
-            />
-
-          </div>
-        )}
 
       </div>
     </section>
