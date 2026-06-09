@@ -69,9 +69,20 @@ const HeroSection = () => {
               <span className="text-yellow-400">Fathima</span>
             </h1>
 
-            <h2 className="text-lg md:text-xl text-gray-300 mt-4">
-              Web Developer & BCA Student
-            </h2>
+            <TypeAnimation
+  sequence={[
+    "Web Developer",
+    2000,
+    "BCA Student",
+    2000,
+    "Frontend Developer",
+    2000,
+  ]}
+  wrapper="span"
+  speed={50}
+  repeat={Infinity}
+  className="text-lg md:text-xl text-gray-300 mt-4 block"
+/>
 
             <p className="text-gray-400 mt-4 max-w-lg leading-relaxed">
               A motivated and detail-oriented BCA graduate with a strong 
