@@ -60,84 +60,51 @@ const Loader = () => {
 
       {/* IMAGE CONTAINER */}
 
-      <div className="relative w-[180px] h-[180px] overflow-hidden">
+      <div className="relative w-[180px] h-[220px]">
 
-        {/* DARK IMAGE */}
+  {/* DARK IMAGE */}
+  <img
+    src={heroImg}
+    alt="loading"
+    className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      object-contain
+      grayscale
+      brightness-50
+      opacity-40
+    "
+  />
 
-        <img
+  {/* COLOR FILL */}
+  <motion.div
+    initial={{ height: 0 }}
+    animate={{ height: `${progress}%` }}
+    transition={{ ease: "linear" }}
+    className="
+      absolute
+      bottom-0
+      left-0
+      w-full
+      overflow-hidden
+    "
+  >
 
-          src={heroImg}
+    <img
+      src={heroImg}
+      alt="loading"
+      className="
+        w-full
+        h-full
+        object-contain
+      "
+    />
 
-          alt="loading"
+  </motion.div>
 
-          className="
-
-            absolute
-
-            inset-0
-
-            w-full
-
-            h-full
-
-            object-contain
-
-            opacity-20
-
-          "
-
-        />
-
-        {/* COLOR LOAD FROM BOTTOM */}
-
-        <motion.div
-
-          initial={{ height: 0 }}
-
-          animate={{ height: `${progress}%` }}
-
-          transition={{ ease: "linear" }}
-
-          className="
-
-            absolute
-
-            bottom-0
-
-            left-0
-
-            w-full
-
-            overflow-hidden
-
-          "
-
-        >
-
-          <img
-
-            src={heroImg}
-
-            alt="loading"
-
-            className="
-
-              w-[180px]
-
-              h-[180px]
-
-              object-contain
-
-              drop-shadow-[0_0_30px_rgba(255,215,0,0.9)]
-
-            "
-
-          />
-
-        </motion.div>
-
-      </div>
-
+</div>
       {/* PERCENTAGE */}
 
       <motion.h2
