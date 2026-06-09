@@ -35,7 +35,14 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-[#020617] overflow-hidden relative"
+      className="
+  min-h-screen
+  flex
+  items-center
+  bg-gradient-hero
+  overflow-hidden
+  relative
+"
     >
       {/* 🔵 Background Glow (FIXED CLICK ISSUE) */}
       <div className="absolute inset-0 pointer-events-none">
