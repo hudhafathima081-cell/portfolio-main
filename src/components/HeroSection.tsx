@@ -133,7 +133,7 @@ const HeroSection = () => {
 
             rounded-full
 
-            blur-[160px]
+            blur-[80px]
           "
         />
 
