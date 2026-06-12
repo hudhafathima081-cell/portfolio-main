@@ -38,7 +38,7 @@ const Certificates = () => {
           "
         >
 
-          My{" "}
+          
 
           <span
             className="
