@@ -21,7 +21,7 @@ const ProjectsSection = () => {
         "Online book browsing website",
 
       link:
-        "https://book-haven-delta.vercel.app/",
+        "https://lumen-booklibrary.vercel.app/",
     },
 
   ]);
